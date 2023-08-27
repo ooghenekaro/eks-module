@@ -9,7 +9,7 @@ resource "aws_vpc" "eks_vpc" {
 # Create an internet gateway
 resource "aws_internet_gateway" "eks_igw" {
   vpc_id = aws_vpc.eks_vpc.id
-  tags = var.igw_tags
+  tags   = var.igw_tags
 }
 # Create 2 Public and 2 Private Subnets
 
@@ -93,7 +93,7 @@ resource "aws_subnet" "priv_two" {
 
 # Create an EIP for the NAT gateway
 resource "aws_eip" "nat_eip" {
-  domain = "vpc" 
+  domain = "vpc"
 }
 
 
@@ -221,8 +221,8 @@ resource "aws_eks_cluster" "karo_cluster" {
       aws_subnet.priv_two.id,
       aws_subnet.pub_one.id,
     aws_subnet.pub_two.id]
-   # Uncomment and Use this below config if you used dynamic count function to create your subnets and comment out the 4 subnets above.    
-   # [aws_subnet.public_subs.*.id, aws_subnet.private_subs.*.id]   
+    # Uncomment and Use this below config if you used dynamic count function to create your subnets and comment out the 4 subnets above.    
+    # [aws_subnet.public_subs.*.id, aws_subnet.private_subs.*.id]   
   }
 
   depends_on = [
@@ -293,9 +293,9 @@ resource "aws_eks_node_group" "eks_node" {
     min_size     = var.min_size
   }
 
-#  remote_access {
-#    ec2_ssh_key = "my-key-pair"  # Replace with your SSH key name
-#  }
+  #  remote_access {
+  #    ec2_ssh_key = "my-key-pair"  # Replace with your SSH key name
+  #  }
 
   update_config {
     max_unavailable = 1

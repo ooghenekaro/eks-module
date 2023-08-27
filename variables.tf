@@ -1,31 +1,31 @@
 # Variable for AWS Region
 variable "region" {
-    type = string
-   description = "This is the Provider's Region"
+  type        = string
+  description = "This is the Provider's Region"
 }
 
 # Variable for vpc cidr
 variable "vpc_cidr" {
-  type = string
+  type        = string
   description = "Variable for your vpc cidr block"
 
 }
 
 # Create a variable for your vpc dns support
 variable "dns_support" {
-    type = string
-   description = "This is a variable for your dns support"
+  type        = string
+  description = "This is a variable for your dns support"
 }
 
 # Variable for DNS hostnames
 variable "dns_hostnames" {
-   type = string
-   description = "This is a variable for my vpc hostnames"
+  type        = string
+  description = "This is a variable for my vpc hostnames"
 }
 
 # Variable for vpc tags
 variable "vpc_tags" {
-  type = map(string)
+  type        = map(string)
   description = "This is the variable for my vpc tags"
   default = {
     Name        = "main_vpc"
@@ -46,26 +46,26 @@ variable "igw_tags" {
 
 # variable for public subnet one cidr
 variable "pub_one_cidr" {
-   type = string
-   description = "cidr for first public subnet"
+  type        = string
+  description = "cidr for first public subnet"
 }
 
 # variable for public subnet two cidr 
 
 variable "pub_two_cidr" {
-   type = string
-   description = "cidr for second public subnet"
+  type        = string
+  description = "cidr for second public subnet"
 }
 
 # Varible for private subnet one cidr
- variable "priv_one_cidr" {
-   type = string
-   description = "cidr for first private subnet" 
+variable "priv_one_cidr" {
+  type        = string
+  description = "cidr for first private subnet"
 }
 
 # Variable for private subnet twp cidr
- variable "priv_two_cidr" {
-  type = string
+variable "priv_two_cidr" {
+  type        = string
   description = "cidr for second private subnet"
 }
 # Variables for Public Subnets cidrs
@@ -76,8 +76,8 @@ variable "pub_two_cidr" {
 
 # Variable for public ip on launch for Public subnets
 variable "public_ip_launch" {
-     type = string
-     default = true
+  type    = string
+  default = true
 }
 
 # Variable for azs
@@ -94,19 +94,19 @@ variable "public_ip_launch" {
 
 # variable for 1st availability zone
 variable "az_one" {
-    type = string
-    description = "az for my first public or private subnet"
+  type        = string
+  description = "az for my first public or private subnet"
 }
 
 # Create a variable for 2nd availability zone
 variable "az_two" {
-   type = string
-   description = "az for my second public or private subnet"
+  type        = string
+  description = "az for my second public or private subnet"
 }
 
 # Variable for your VPC_ID
 variable "vpc_id" {
-    type = string
+  type = string
 }
 
 # Variable for Subnet_ID
@@ -124,8 +124,8 @@ variable "vpc_id" {
 
 # Variable for EKS Cluster Version
 variable "eks_version" {
-    type = string
-    description = "EKS Version"
+  type        = string
+  description = "EKS Version"
 }
 
 # Variable for worker nodes name
@@ -133,7 +133,7 @@ variable "eks_version" {
 #  description = "Name of the EKS node group."
 #  default     = "my-node-group"
 #}
- 
+
 # Variable for worker nodes desired capacity
 
 variable "desired_size" {
@@ -157,8 +157,8 @@ variable "max_size" {
 
 # variable for worker nodes ami type
 variable "ami_type" {
-    type = string
-    description = "AMI type for your worker nodes"
+  type        = string
+  description = "AMI type for your worker nodes"
 }
 
 # variable for instance types
@@ -169,15 +169,15 @@ variable "instance_types" {
 
 # Variable for worker nodes capacity type
 variable "capacity_type" {
- type = string
- description = "a variable for your worker nodes capacity type"
+  type        = string
+  description = "a variable for your worker nodes capacity type"
 }
 
 # Variable disk size for Worker Nodes
 variable "disk_size" {
-    type = string
-    description = "Disk size for your Worker Nodes"
-    default = "50"
+  type        = string
+  description = "Disk size for your Worker Nodes"
+  default     = "50"
 }
 
 # Variable for EKS Cluster role name 
@@ -202,8 +202,8 @@ variable "disk_size" {
 
 # variable for max unavailable nodes
 variable "max_unavailable" {
-  type = string
+  type        = string
   description = "max unavailable nodes for your worker nodes"
-  default = 1
+  default     = 1
 }
- 
+
